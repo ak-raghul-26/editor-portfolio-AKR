@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A. Raghul | Professional Video Editor Portfolio</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts: Inter & Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0b10;
+            --bg-secondary: #131622;
+            --bg-card: #1a1e2e;
+            --accent-gold: #f59e0b;
+            --accent-purple: #8b5cf6;
+            --accent-cyan: #06b6d4;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+         body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-gold);
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: rgba(10, 11, 16, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: var(--text-main) !important;
+        }
+
+        .nav-link {
+            color: var(--text-muted) !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+
+        .nav-link {
+            color: var(--text-muted) !important;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-gold) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 160px 0 100px 0;
+            background: radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.12) 0%, transparent 40%),
+                        radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 40%),
+                        var(--bg-primary);
+            position: relative;
+        }
+
+        .hero-avatar-wrapper {
+            position: relative;
+            width: 280px;
+             height: 280px;
+            margin: 0 auto;
+        }
+
+        .hero-avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+            border: 3px solid var(--accent-gold);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.25);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-avatar:hover {
+            transform: scale(1.03) rotate(1deg);
+        }
+.avatar-glow {
+            position: absolute;
+            inset: -4px;
+            background: linear-gradient(45deg, var(--accent-gold), var(--accent-purple), var(--accent-cyan));
+            border-radius: 28px;
+            z-index: -1;
+            filter: blur(12px);
+            opacity: 0.7;
+            animation: pulseGlow 4s ease infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { opacity: 0.4; transform: scale(0.98); }
+            100% { opacity: 0.8; transform: scale(1.02); }
+        }
+
+        .badge-custom {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-gold);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+             padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Buttons */
+        .btn-gold {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #000;
+            font-weight: 700;
+            border: none;
+             padding: 12px 28px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+            transition: all 0.3s ease;
+        }
+
+          .btn-gold:hover {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(245, 158, 11, 0.4);
+            color: #000;
+        }
+
+        .btn-outline-custom {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-custom:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+
+
+         /* Section Titles */
+        .section-title {
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+        }
+
+        /* Cards & Containers */
+        .card-custom {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .card-custom:hover {
+            transform: translateY(-8px);
+            border-color: rgba(245, 158, 11, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Video Showcase Specifics */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 177.78%; /* 9:16 Aspect Ratio for Reels / Shorts */
+            background-color: #000;
+            border-radius: 16px 16px 0 0;
+            overflow: hidden;
+        }
+
+        .video-container-yt {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio for YouTube */
+            background-color: #000;
+            border-radius: 16px 16px 0 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe,
+        .video-container-yt iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .category-heading {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 24px;
+            border-radius: 50px;
+            margin-bottom: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Experience & Education Timelines */
+        .timeline-card {
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent-gold);
+            padding: 24px;
+            border-radius: 0 16px 16px 0;
+            margin-bottom: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-right: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            transform: translateX(6px);
+        }
+
+        /* Skills Badges */
+        .skill-badge {
+            background: rgba(139, 92, 246, 0.15);
+            color: #c084fc;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            background: var(--accent-purple);
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 40px;
+        }
+
+        .form-control, .form-select {
+            background-color: var(--bg-primary);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--text-main);
+            padding: 14px 20px;
+            border-radius: 12px;
+        }
+
+        .form-control:focus {
+            background-color: var(--bg-primary);
+            border-color: var(--accent-gold);
+            color: var(--text-main);
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
+        }
+
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        /* Modal custom styling */
+        .modal-content {
+            background-color: var(--bg-card);
+            color: var(--text-main);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+        }
+        .modal-header {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .modal-footer {
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <span class="text-warning"><i class="fa-solid fa-clapperboard"></i></span> A. Raghul
+            </a>
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars-staggered fa-lg"></i>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Works & Videos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a href="tel:6382528641" class="btn btn-gold btn-sm px-3 py-2"><i class="fa-solid fa-phone me-1"></i> Call Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center text-lg-start">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="mb-3">
+                        <span class="badge-custom"><i class="fa-solid fa-star me-1"></i> Available for Hire • 1+ Year Experience</span>
+                    </div>
+                    <h1 class="display-3 fw-bold mb-3">Hi, I'm <span class="text-warning">A. Raghul</span></h1>
+                    <h2 class="h3 mb-4">Professional Video Editor & Content Creator</h2>
+                    <p class="lead mb-5">
+                        Highly motivated Video Editor proficient in Adobe Premiere Pro, dedicated to delivering high-quality vlogs, travel, food, and stunning AI-generated social media reels with powerful storytelling and engaging pacing.
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+                        <a href="#portfolio" class="btn btn-gold"><i class="fa-solid fa-play me-2"></i> Explore Works</a>
+                        <a href="#contact" class="btn btn-outline-custom"><i class="fa-solid fa-envelope me-2"></i> Get in Touch</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="hero-avatar-wrapper">
+                        <div class="avatar-glow"></div>
+                        <img src="raghul.jpeg" alt="A. Raghul Video Editor" class="hero-avatar img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Personal Info Section -->
+    <section id="about" class="py-5 bg-opacity-50" style="background-color: var(--bg-secondary);">
+        <div class="container py-4">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title display-5">Personal Information & Profile</h2>
+                <p class="section-subtitle">Get to know the person behind the timeline and edits.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-custom p-4 p-md-5">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                                    <li><strong class="text-warning"><i class="fa-solid fa-user me-2"></i> Name:</strong> A. Raghul</li>
+                                    <li><strong class="text-warning"><i class="fa-solid fa-cake-candles me-2"></i> Date of Birth:</strong> 27/10/2000</li>
+                                    <li><strong class="text-warning"><i class="fa-solid fa-venus-mars me-2"></i> Gender:</strong> Male</li>
+                                    <li><strong class="text-warning"><i class="fa-solid fa-globe me-2"></i> Nationality:</strong> India</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                                    <li><strong class="text-warning"><i class="fa-solid fa-phone me-2"></i> Phone:</strong> +91 6382528641</li>
+                                    <li><strong class="text-warning"><i class="fa-solid fa-envelope me-2"></i> Email:</strong> raghularul1174@gmail.com</li>
+                                    <li><strong class="text-warning"><i class="fa-solid fa-location-dot me-2"></i> Address:</strong> 2/70 Kolathupalayam, Kagam (PO), Sivagiri (Via), Erode 638109</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience & Education Section -->
+    <section id="experience" class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title display-5">Experience & Education</h2>
+                <p class="section-subtitle">My professional journey and academic background.</p>
+            </div>
+            <div class="row g-4">
+                <!-- Professional Experience -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h3 class="h4 mb-4 text-warning"><i class="fa-solid fa-briefcase me-2"></i> Professional Experience</h3>
+                    
+                    <div class="timeline-card">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h4 class="h5 fw-bold mb-0">Video Editor</h4>
+                            <span class="badge bg-warning text-dark">June 2025 - May 2026</span>
+                        </div>
+                        <h6 class="mb-3">YouTube Channel - K7 </h6>
+                        <p class="mb-0">Edited various video content including vlogs, food, and travel videos using Adobe Premiere Pro, ensuring high engagement and creative storytelling.</p>
+                    </div>
+
+                    <div class="timeline-card">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h4 class="h5 fw-bold mb-0">Video Editor & Creator</h4>
+                            <span class="badge bg-warning text-dark">Recent Works</span>
+                        </div>
+                        <h6 class=" mb-3">Erode Beast (Instagram Page)</h6>
+                        <p class=" mb-0">Created high-impact social media reels, AI-generated video content, and dynamic edits tailored for Instagram audiences.</p>
+                    </div>
+                </div>
+
+                <!-- Education & Skills -->
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="h4 mb-4 text-warning"><i class="fa-solid fa-graduation-cap me-2"></i> Education</h3>
+                    
+                    <div class="timeline-card">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h4 class="h5 fw-bold mb-0">Karuppannan Mariappan College - Muthur</h4>
+                            <span class="badge bg-secondary">2018 - 2021</span>
+                        </div>
+                        <p class="text-muted mb-0">Higher education completed with a strong foundation in communication and organization.</p>
+                    </div>
+
+                    <div class="timeline-card">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h4 class="h5 fw-bold mb-0">Rajendra Matriculation Her,sec,school - Vellakethi</h4>
+                            <span class="badge bg-secondary">2017 - 2018</span>
+                        </div>
+                        <p class="text-muted mb-0">Completed secondary schooling with academic excellence.</p>
+                    </div>
+
+                    <h3 class="h4 mt-5 mb-3 text-warning"><i class="fa-solid fa-wand-magic-sparkles me-2"></i> Core Skills</h3>
+                    <div class="d-flex flex-wrap">
+                        <span class="skill-badge">Adobe Premiere Pro</span>
+                        <span class="skill-badge">AI Video Editing</span>
+                        <span class="skill-badge">Creativity & Storytelling</span>
+                        <span class="skill-badge">Time Management</span>
+                        <span class="skill-badge">Communication & Collaboration</span>
+                        <span class="skill-badge">Tamil & English</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Video Showcase Section -->
+    <section id="portfolio" class="py-5 bg-opacity-50" style="background-color: var(--bg-secondary);">
+        <div class="container py-4">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title display-5">Work & Video Showcase</h2>
+                <p class="section-subtitle">Sample works showcasing AI editing, Instagram Reels, and YouTube video production.</p>
+            </div>
+
+            <!-- CATEGORY 1: AI EDITING VIDEOS (INSTAGRAM REELS) -->
+            <div class="mb-5 text-center" data-aos="fade-up">
+                <div class="category-heading">
+                    <i class="fa-solid fa-robot"></i> AI Editing Videos (Instagram Reels)
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <!-- AI Video 1 -->
+                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card-custom h-100">
+                            <div class="video-container">
+                                <!-- Instagram Embed Blockquote / Fallback Interactive Card -->
+                                <iframe src="https://www.instagram.com/reel/DWIqgDWT_uA/embed" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body p-4 text-start">
+                                <span class="badge bg-warning text-dark mb-2">AI Reel #1</span>
+                                <h5 class="card-title fw-bold">Advanced AI Visual Generation Reel</h5>
+                                <p class="card-text text-muted small mb-3">Created using cutting-edge AI video tools and polished in Premiere Pro.</p>
+                                <a href="https://www.instagram.com/reel/DWIqgDWT_uA/?stkn=MXcyYzR6MWE2bGFkZA==" target="_blank" class="btn btn-outline-custom btn-sm w-100"><i class="fa-brands fa-instagram me-1"></i> Watch on Instagram</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Video 2 -->
+                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="card-custom h-100">
+                            <div class="video-container">
+                                <iframe src="https://www.instagram.com/reel/DUcGsxbkldm/embed" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body p-4 text-start">
+                                <span class="badge bg-warning text-dark mb-2">AI Reel #2</span>
+                                <h5 class="card-title fw-bold">Futuristic Concept AI Video Edit</h5>
+                                <p class="card-text text-muted small mb-3">Immersive cinematic AI generation with seamless transitions and sound design.</p>
+                                <a href="https://www.instagram.com/reel/DUcGsxbkldm/?stkn=ZG04eHd2d3k3emUw" target="_blank" class="btn btn-outline-custom btn-sm w-100"><i class="fa-brands fa-instagram me-1"></i> Watch on Instagram</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 2: INSTAGRAM REELS / SOCIAL MEDIA VIDEOS -->
+            <div class="mb-5 text-center pt-4" data-aos="fade-up">
+                <div class="category-heading">
+                    <i class="fa-brands fa-instagram"></i> Instagram Reels & Social Media Edits
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <!-- Insta Video 3 -->
+                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card-custom h-100">
+                            <div class="video-container">
+                                <iframe src="https://www.instagram.com/reel/DXR2g3lTR_V/embed" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body p-4 text-start">
+                                <span class="badge bg-purple text-white mb-2" style="background-color: var(--accent-purple);">Social Reel #3</span>
+                                <h5 class="card-title fw-bold">Erode Beast Page Production</h5>
+                                <p class="card-text text-muted small mb-3">Dynamic fast-paced editing designed for maximum user retention and engagement.</p>
+                                <a href="https://www.instagram.com/reel/DXR2g3lTR_V/?stkn=cW1scm1wN3R4N2Fz" target="_blank" class="btn btn-outline-custom btn-sm w-100"><i class="fa-brands fa-instagram me-1"></i> Watch on Instagram</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Insta Video 4 -->
+                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="card-custom h-100">
+                            <div class="video-container">
+                                <iframe src="https://www.instagram.com/reel/DVObKveDMhR/embed" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body p-4 text-start">
+                                <span class="badge bg-purple text-white mb-2" style="background-color: var(--accent-purple);">Social Reel #4</span>
+                                <h5 class="card-title fw-bold">Trending Beats & Visual Sync</h5>
+                                <p class="card-text text-muted small mb-3">Precise beat-matching and color grading for viral social media content.</p>
+                                <a href="https://www.instagram.com/reel/DVObKveDMhR/?stkn=N2VnNHVmZHJkZTBz" target="_blank" class="btn btn-outline-custom btn-sm w-100"><i class="fa-brands fa-instagram me-1"></i> Watch on Instagram</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Insta Video 5 -->
+                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="card-custom h-100">
+                            <div class="video-container">
+                                <iframe src="https://www.instagram.com/reel/DRzW1rxky76/embed" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body p-4 text-start">
+                                <span class="badge bg-purple text-white mb-2" style="background-color: var(--accent-purple);">Social Reel #5</span>
+                                <h5 class="card-title fw-bold">Creative Cinematic Montage</h5>
+                                <p class="card-text text-muted small mb-3">Crafted with immersive audio effects and clean narrative cuts.</p>
+                                <a href="https://www.instagram.com/reel/DRzW1rxky76/?stkn=MTd4MWVpYTY2NG1iZw==" target="_blank" class="btn btn-outline-custom btn-sm w-100"><i class="fa-brands fa-instagram me-1"></i> Watch on Instagram</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Insta Video 6 -->
+                    <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="card-custom h-100">
+                            <div class="video-container">
+                                <iframe src="https://www.instagram.com/reel/DSuyaRgjKXw/embed" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body p-4 text-start">
+                                <span class="badge bg-purple text-white mb-2" style="background-color: var(--accent-purple);">Social Reel #6</span>
+                                <h5 class="card-title fw-bold">High-Energy Reel Edit</h5>
+                                <p class="card-text text-muted small mb-3">Engaging storytelling and creative text animations for audience retention.</p>
+                                <a href="https://www.instagram.com/reel/DSuyaRgjKXw/?stkn=MTkzZHZqNGsyaW0xcg==" target="_blank" class="btn btn-outline-custom btn-sm w-100"><i class="fa-brands fa-instagram me-1"></i> Watch on Instagram</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 3: YOUTUBE VIDEOS -->
+            <div class="mb-3 text-center pt-4" data-aos="fade-up">
+                <div class="category-heading">
+                    <i class="fa-brands fa-youtube text-danger"></i> YouTube Channel Productions (K7 Channel)
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <!-- YouTube Video 1 -->
+                    <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-custom h-100">
+                            <div class="video-container-yt">
+                                <iframe src="https://www.youtube.com/embed/5nVR1MqWfSY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body p-4 text-start">
+                                <span class="badge bg-danger mb-2">YouTube Video #1</span>
+                                <h5 class="card-title fw-bold">K7 Channel Vlog & Travel Feature</h5>
+                                <p class="card-text text-muted small mb-3">Professional vlog editing with dynamic cuts, color grading, and audio mastering using Adobe Premiere Pro.</p>
+                                <a href="https://youtu.be/5nVR1MqWfSY?si=avAVGurMdQxB_uyd" target="_blank" class="btn btn-outline-custom btn-sm w-100"><i class="fa-brands fa-youtube me-1 text-danger"></i> Watch on YouTube</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- YouTube Video 2 -->
+                    <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-custom h-100">
+                            <div class="video-container-yt">
+                                <iframe src="https://www.youtube.com/embed/G66Y9_oMOqA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body p-4 text-start">
+                                <span class="badge bg-danger mb-2">YouTube Video #2</span>
+                                <h5 class="card-title fw-bold">Food & Lifestyle Feature</h5>
+                                <p class="card-text text-muted small mb-3">Engaging storytelling and appetizing color correction tailored for YouTube audiences.</p>
+                                <a href="https://youtu.be/G66Y9_oMOqA?si=uR3S1TO_CuW5nphr" target="_blank" class="btn btn-outline-custom btn-sm w-100"><i class="fa-brands fa-youtube me-1 text-danger"></i> Watch on YouTube</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- YouTube Video 3 -->
+                    <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card-custom h-100">
+                            <div class="video-container-yt">
+                                <iframe src="https://www.youtube.com/embed/yEsGgLYMqJc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body p-4 text-start">
+                                <span class="badge bg-danger mb-2">YouTube Video #3</span>
+                                <h5 class="card-title fw-bold">K7 Special Feature Production</h5>
+                                <p class="card-text text-muted small mb-3">Cinematic transitions, pacing optimization, and sound design.</p>
+                                <a href="https://youtu.be/yEsGgLYMqJc?si=lgCYmHh4BIGOJZPF" target="_blank" class="btn btn-outline-custom btn-sm w-100"><i class="fa-brands fa-youtube me-1 text-danger"></i> Watch on YouTube</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- YouTube Video 4 -->
+                    <div class="col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card-custom h-100">
+                            <div class="video-container-yt">
+                                <iframe src="https://www.youtube.com/embed/JnfioNLmL-k" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body p-4 text-start">
+                                <span class="badge bg-danger mb-2">YouTube Video #4</span>
+                                <h5 class="card-title fw-bold">Explore & Experience Vlog</h5>
+                                <p class="card-text text-muted small mb-3">High-energy documentary-style edit with professional post-production standards.</p>
+                                <a href="https://youtu.be/JnfioNLmL-k?si=Z5XyG1qrPtqjthqr" target="_blank" class="btn btn-outline-custom btn-sm w-100"><i class="fa-brands fa-youtube me-1 text-danger"></i> Watch on YouTube</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title display-5">Get In Touch</h2>
+                <p class="section-subtitle">Let's collaborate on your next video project or editing assignment.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-box">
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted small">Your Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter your name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted small">Your Email</label>
+                                    <input type="email5" class="form-control" placeholder="name@example.com" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label text-muted small">Subject</label>
+                                    <input type="text" class="form-control" placeholder="Video Editing Project / Inquiry" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label text-muted small">Message</label>
+                                    <textarea class="form-control" rows="5" placeholder="Tell me about your project requirements..." required></textarea>
+                                </div>
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" class="btn btn-gold px-5 py-3 w-100"><i class="fa-solid fa-paper-plane me-2"></i> Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-2 fw-bold text-white">&copy; 2026 A. Raghul. All Rights Reserved.</p>
+            <p class="small text-muted mb-3">Professional Video Editor • Erode, Tamil Nadu, India</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="mailto:raghularul1174@gmail.com" class="text-muted text-decoration-none hover-warning"><i class="fa-solid fa-envelope fa-lg"></i></a>
+                <a href="tel:6382528641" class="text-muted text-decoration-none hover-warning"><i class="fa-solid fa-phone fa-lg"></i></a>
+                <a href="https://www.instagram.com" target="_blank" class="text-muted text-decoration-none hover-warning"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                <a href="https://www.youtube.com" target="_blank" class="text-muted text-decoration-none hover-warning"><i class="fa-brands fa-youtube fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Message Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4 text-center">
+                <div class="mb-3 text-warning">
+                    <i class="fa-solid fa-circle-check fa-3x"></i>
+                </div>
+                <h4 class="fw-bold mb-2">Message Sent Successfully!</h4>
+                <p class="text-muted mb-4">Thank you for reaching out. Raghul will get back to you soon.</p>
+                <button type="button" class="btn btn-gold w-100" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap & AOS JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Form submission handler without alert()
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const modal = new bootstrap.Modal(document.getElementById('successModal'));
+            modal.show();
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+</html>
